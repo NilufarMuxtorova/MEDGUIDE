@@ -1,34 +1,118 @@
-<script>
-    // 1. Matnni ovoz chiqarib o'qish funksiyasi
-    function speakText(text) {
-        if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'la-LA'; 
-            utterance.rate = 0.9;     
-            window.speechSynthesis.speak(utterance);
-        } else {
-            alert("Afsuski, brauzeringiz ovoz chiqarish funksiyasini qo'llab-quvvatlamaydi.");
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedGuide - Osteologiya kartochkalari</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
         }
-    }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .card {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        .speak-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .speak-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
 
-    // 2. QR kod orqali kirganda faqat bitta kartochkani ko'rsatish
-    window.addEventListener('DOMContentLoaded', () => {
-        const hash = window.location.hash; // Masalan: #ost-5
-        
-        if (hash) {
-            const allCards = document.querySelectorAll('.card');
-            
-            // Hamma kartochkalarni yashiramiz
-            allCards.forEach(card => {
-                card.style.display = 'none';
-            });
+    <div class="container">
+        <h1>Osteologiya Kartochkalari</h1>
 
-            // Faqat kerakli kartochkani topib chiqaramiz
-            const targetCard = document.querySelector(hash);
-            if (targetCard) {
-                targetCard.style.display = 'block';
+        <!-- 1-kartochka -->
+        <div id="ost-1" class="card">
+            <h3>1. Columna vertebralis (Umurtqa pog'onasi)</h3>
+            <p>Tavsif yoki qo'shimcha ma'lumotlar shu yerda bo'ladi...</p>
+            <button class="speak-btn" onclick="speakText('Columna vertebralis')">🔊 Tinglash</button>
+        </div>
+
+        <!-- 2-kartochka -->
+        <div id="ost-2" class="card">
+            <h3>2. Cranium (Kalla suyagi)</h3>
+            <p>Tavsif yoki qo'shimcha ma'lumotlar shu yerda bo'ladi...</p>
+            <button class="speak-btn" onclick="speakText('Cranium')">🔊 Tinglash</button>
+        </div>
+
+        <!-- 3-kartochka -->
+        <div id="ost-3" class="card">
+            <h3>3. Sternum (To'sh suyagi)</h3>
+            <p>Tavsif yoki qo'shimcha ma'lumotlar shu yerda bo'ladi...</p>
+            <button class="speak-btn" onclick="speakText('Sternum')">🔊 Tinglash</button>
+        </div>
+
+        <!-- 5-kartochka -->
+        <div id="ost-5" class="card">
+            <h3>5. Costae (Qovurg'alar)</h3>
+            <p>Beshinchi suyak kartochkasi tavsifi...</p>
+            <button class="speak-btn" onclick="speakText('Costae')">🔊 Tinglash</button>
+        </div>
+    </div>
+
+    <script>
+        // 1. Matnni ovoz chiqarib o'qish funksiyasi
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'la-LA'; 
+                utterance.rate = 0.9;     
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("Afsuski, brauzeringiz ovoz chiqarish funksiyasini qo'llab-quvvatlamaydi.");
             }
         }
-    });
-</script>
+
+        // 2. QR kod orqali kirganda FAQAT O'SHA kartochkani ko'rsatish
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash; // Masalan: #ost-5
+            
+            if (hash) {
+                const allCards = document.querySelectorAll('.card');
+                
+                // Hamma kartochkalarni yashiramiz
+                allCards.forEach(card => {
+                    card.style.display = 'none';
+                });
+
+                // Faqat kerakli kartochkani topib chiqaramiz
+                const targetCard = document.querySelector(hash);
+                if (targetCard) {
+                    targetCard.style.display = 'block';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
