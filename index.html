@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedGuide - Osteologiya Kartochkalari</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        :root {
+            --bg-color: var(--tg-theme-bg-color, #f4f6f8);
+            --text-color: var(--tg-theme-text-color, #222);
+            --card-bg: var(--tg-theme-secondary-bg-color, #ffffff);
+            --button-color: var(--tg-theme-button-color, #2ea6ff);
+            --border-color: #e0e0e0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 15px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            outline: none;
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+        .card-header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #007aff;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .badge {
+            font-size: 12px;
+            background: rgba(0, 122, 255, 0.1);
+            color: #007aff;
+            padding: 3px 8px;
+            border-radius: 6px;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 10px;
+            color: #444;
+        }
+        ul {
+            margin: 5px 0 10px 20px;
+            padding: 0;
+            font-size: 14px;
+        }
+        li {
+            margin-bottom: 3px;
+        }
+        .clinical {
+            background: rgba(255, 59, 48, 0.05);
+            border-left: 3px solid #ff3b30;
+            padding: 8px 10px;
+            margin-top: 8px;
+            font-size: 13px;
+            border-radius: 0 6px 6px 0;
+        }
+        .lang-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4px;
+            font-size: 13px;
+            background: rgba(0,0,0,0.02);
+            padding: 8px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🦴 MedGuide Osteologiya</h1>
+    <div class="subtitle">5 Tilli Tibbiy Ma'lumotnomalar Bazasi (1–60)</div>
+
+    <input type="text" id="searchInput" class="search-box" placeholder="Suyak nomini qidirish (Lotin, O'zbek, Rus...)" onkeyup="filterCards()">
+
+    <div id="cardsContainer">
+        <!-- #OST-1 -->
+        <div class="card" data-search="ost-1 os frontale peshona frontal frontal bone lobnaya kost alin kemigi">
+            <div class="card-header"><span>Os frontale</span><span class="badge">#OST-1</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Peshona suyagi (toq)</div>
+                <div>🇬🇧 <b>English:</b> Frontal bone (Unpaired)</div>
+                <div>🇷🇺 <b>Русский:</b> Лобная кость (Непарный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Alın kemiği (Tek)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Squama frontalis (Peshona tangachasi)</li>
+                <li>Partes orbitales (Ko'z kosa qismlari)</li>
+                <li>Pars nasalis (Burun qismi)</li>
+                <li>Sinus frontalis (Peshona havo yo'li bo'shlig'i)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Incisura / Foramen supraorbitale ➔ N. supraorbitalis (V1 tarmoqlari)</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Peshona suyagi sinishlarida yuqori ko'z kosa qirrasi zararlanishi natijasida peshona sohasi va yuqori qovoq terisining sezgi pasayishi (anesteziya/paresteziya) kuzatilishi mumkin.</div>
+        </div>
+
+        <!-- #OST-2 -->
+        <div class="card" data-search="ost-2 os parietale teppa parietal parietal bone temennaya kost yan kafa kemigi">
+            <div class="card-header"><span>Os parietale</span><span class="badge">#OST-2</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Teppa suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Parietal bone (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Теменная кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Yan kafa kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Tuber parietale (Teppa do'ngchasi)</li>
+                <li>Linea temporalis superior et inferior</li>
+                <li>Margo sagittalis, squamosus, frontalis, occipitalis</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Foramen parietale (Parietal teshik) ➔ Vena emissaria parietalis (venoz oqim)</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Kalla suyagi gumbazining travmalarida parietal suyakning sinishi ostidagi miya qattiq qobig'i tomirlarining (a. meningea media) shikastlanishiga va epidural gematoma yuzaga kelishiga sabab bo'lishi mumkin.</div>
+        </div>
+
+        <!-- #OST-3 -->
+        <div class="card" data-search="ost-3 os occipitale ensa occipital occipital bone zatilochnaya kost ard kafa kemiği">
+            <div class="card-header"><span>Os occipitale</span><span class="badge">#OST-3</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Ensa suyagi (toq)</div>
+                <div>🇬🇧 <b>English:</b> Occipital bone (Unpaired)</div>
+                <div>🇷🇺 <b>Русский:</b> Затылочная кость (Непарный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Ard kafa kemiği (Tek)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Pars basilaris (Asosiy qism)</li>
+                <li>Partes laterales (Yon qismlar) — Condylus occipitalis</li>
+                <li>Squama occipitalis (Ensa tangachasi)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul>
+                <li>Foramen magnum ➔ Orqa miya va bosh miya tutashuvi, umurtqa arteriyalari</li>
+                <li>Canalis n. hypoglossi ➔ N. hypoglossus (XII)</li>
+            </ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Katta ensa teshigining (foramen magnum) dislokatsiyasi yoki shishlar natijasida miya ustuni siqilishi hayot uchun xavfli bo'lgan nafas va yurak markazlari falajiga olib keladi.</div>
+        </div>
+
+        <!-- #OST-4 -->
+        <div class="card" data-search="ost-4 os temporale chakka temporal temporal bone visochnaya kost şakak kemiği">
+            <div class="card-header"><span>Os temporale</span><span class="badge">#OST-4</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Chakka suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Temporal bone (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Височная кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Şakak kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Pars squamosa (Tangacha qism)</li>
+                <li>Pars tympanica (Tovush yo'li qismi)</li>
+                <li>Pars petrosa / Pyramis (Tosh qism / Piramida)</li>
+                <li>Processus styloideus va mastoideus</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul>
+                <li>Canalis caroticus ➔ A. carotis interna</li>
+                <li>Meatus acusticus internus ➔ N. facialis (VII), N. vestibulocochlearis (VIII)</li>
+                <li>Canalis facialis ➔ N. facialis</li>
+            </ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Chakka suyagining tosh qismi sinishi eshitish va muvozanat buzilishiga hamda yuz nervi falajiga (Bell falaji) olib kelishi mumkin.</div>
+        </div>
+
+        <!-- #OST-5 -->
+        <div class="card" data-search="ost-5 os sphenoidale ponasimon sphenoid sphenoid bone klinovidnaya kost temel kemik">
+            <div class="card-header"><span>Os sphenoidale</span><span class="badge">#OST-5</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Ponasimon suyak (toq)</div>
+                <div>🇬🇧 <b>English:</b> Sphenoid bone (Unpaired)</div>
+                <div>🇷🇺 <b>Русский:</b> Клиновидная кость (Непарный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Temel kemik (Tek)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Corpus (Tana) — Sella turcica</li>
+                <li>Alae majores (Katta qanotlar)</li>
+                <li>Alae minores (Kichik qanotlar)</li>
+                <li>Processus pterygoidei</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul>
+                <li>Canalis opticus ➔ N. opticus (II)</li>
+                <li>Fissura orbitalis superior ➔ III, IV, V1, VI juft bosh miya nervlari</li>
+                <li>Foramen rotundum ➔ N. maxillaris (V2)</li>
+                <li>Foramen ovale ➔ N. mandibularis (V3)</li>
+            </ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Gipofiz adenomasida Turkiya egari va ko'rish xiazmasi siqilib, ko'rishning keskin yomonlashishiga (bitemporal hemianopsiya) sabab bo'ladi.</div>
+        </div>
+
+        <!-- #OST-6 -->
+        <div class="card" data-search="ost-6 os ethmoidale galvirsimon ethmoid ethmoid bone reshetchataya kost kalbur kemiği">
+            <div class="card-header"><span>Os ethmoidale</span><span class="badge">#OST-6</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> G'alvirsimon suyak (toq)</div>
+                <div>🇬🇧 <b>English:</b> Ethmoid bone (Unpaired)</div>
+                <div>🇷🇺 <b>Русский:</b> Решетчатая кость (Непарный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kalbur kemiği (Tek)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Lamina cribrosa (G'alvirsimon plastinka)</li>
+                <li>Lamina perpendicularis (Tik plastinka)</li>
+                <li>Labyrinthus ethmoidalis (Cellulae ethmoidales)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Foramina cribrosa ➔ Fila olfactoria (I juft hid bilish nervi tolalari)</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> G'alvirsimon plastinkaning sinishi hid bilishni yo'qotishiga (anosmiya) va burun bo'shlig'idan miya-orqa miya suyuqligi (likvoreya) oqib chiqishiga olib kelishi mumkin.</div>
+        </div>
+
+        <!-- #OST-7 -->
+        <div class="card" data-search="ost-7 maxilla yuqori jag maxilla upper jaw verhnyaya chelyust üst çene kemiği">
+            <div class="card-header"><span>Maxilla</span><span class="badge">#OST-7</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Yuqori jag' (juft)</div>
+                <div>🇬🇧 <b>English:</b> Upper jaw (Maxilla) (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Верхняя челюсть (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Üst çene kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Corpus maxillae (Sinus maxillaris)</li>
+                <li>Processus frontalis, zygomaticus, alveolaris, palatinus</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul>
+                <li>Foramen infraorbitale ➔ N. infraorbitalis (V2 tarmog'i)</li>
+                <li>Canalis incisivus ➔ N. nasopalatinus</li>
+            </ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Yuqori jag' sinusiti (gaymorit) paytida gajaklar sohasida og'riq va yuqori tishlarga tarqaluvchi nevralgiyalar kuzatiladi.</div>
+        </div>
+
+        <!-- #OST-8 -->
+        <div class="card" data-search="ost-8 mandibula pastki jag mandible lower jaw nizhnyaya chelyust alt çene kemiği">
+            <div class="card-header"><span>Mandibula</span><span class="badge">#OST-8</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Pastki jag' (toq)</div>
+                <div>🇬🇧 <b>English:</b> Lower jaw (Mandible) (Unpaired)</div>
+                <div>🇷🇺 <b>Русский:</b> Нижняя челюсть (Непарный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Alt çene kemiği (Tek)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Corpus mandibulae (Tana)</li>
+                <li>Ramus mandibulae (Tarmoq)</li>
+                <li>Processus condylaris va coronoideus</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul>
+                <li>Foramen mandibulare ➔ N. alveolaris inferior</li>
+                <li>Foramen mentale ➔ N. mentalis</li>
+            </ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Pastki jag' sinishlari ko'pincha burchak yoki tarmoq qismida yuzaga kelib, pastki tishlar sezgisining yo'qolishiga va chaynash funksiyasining buzilishiga olib keladi.</div>
+        </div>
+
+        <!-- #OST-9 -->
+        <div class="card" data-search="ost-9 os zygomaticum yonoq zygomatic cheekbone skulovaya kost elmacık kemiği">
+            <div class="card-header"><span>Os zygomaticum</span><span class="badge">#OST-9</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Yonoq suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Cheekbone (Zygomatic) (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Скуловая кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Elmacık kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Facies lateralis, orbitalis, temporalis</li>
+                <li>Processus frontosphenoidalis, maxillaris, temporalis</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Foramen zygomaticoorbitale ➔ N. zygomaticofacialis va zygomaticotemporalis</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Yonoq suyagi travmalari yuz skeletining konfiquratsiyasini buzib, ko'z kosasi tubining sinishiga va diplomatik (ikki bo'lib ko'rinish) holatiga sabab bo'ladi.</div>
+        </div>
+
+        <!-- #OST-10 -->
+        <div class="card" data-search="ost-10 os nasale burun nasal nasal bone nosovaya kost burun kemiği">
+            <div class="card-header"><span>Os nasale</span><span class="badge">#OST-10</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Burun suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Nasal bone (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Носовая кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Burun kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Yuqori qismi qalin va tor, pastki qismi kengaygan plastinka shaklida.</li>
+                <li>Tashqi yuzasi biroz qavariq, ichki yuzasi burun bo'shlig'iga qaragan.</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Foramen nasale ➔ Tomir va nerv shoxchalarining o'tish teshikchalari.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Yuzga keladigan zarbalarda burun suyagi sinishi eng ko'p uchraydigan jarohatlardan biri bo'lib, nafas olishning buzilishi va burun shaklining qiyshayishiga olib keladi.</div>
+        </div>
+
+        <!-- #OST-11 -->
+        <div class="card" data-search="ost-11 os lacrimale ko'z yosh lacrimal lacrimal bone sleznaya kost gözyaşı kemiği">
+            <div class="card-header"><span>Os lacrimale</span><span class="badge">#OST-11</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Ko'z yosh suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Lacrimal bone (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Слезная кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Gözyaşı kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Crista lacrimalis posterior</li>
+                <li>Sulcus lacrimalis</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Canalis nasolacrimalis hosil qilishda qatnashadi ➔ Ko'z yosh yo'li o'tadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Bu suyakning shikastlanishi yoki ko'z yosh kanalining tiqilib qolishi doimiy yosh oqishiga (dakriotsistit) sabab bo'ladi.</div>
+        </div>
+
+        <!-- #OST-12 -->
+        <div class="card" data-search="ost-12 vomer dimog' sanoch vomer vomer soshnik sapan kemiği">
+            <div class="card-header"><span>Vomer</span><span class="badge">#OST-12</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Dimog' suyagi / Sanoch (toq)</div>
+                <div>🇬🇧 <b>English:</b> Vomer (Unpaired)</div>
+                <div>🇷🇺 <b>Русский:</b> Сошник (Непарный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Sapan kemiği (Tek)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul><li>Burun to'sig'ining suyak qismini hosil qiluvchi trapetsiyasimon yupqa suyak plastinkasi.</li></ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Maxsus yirik teshiklari yo'q, shilliq qavat tomirlari va nervlari o'tadigan mayda teshikchalari bor.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Vomerning qiyshayishi (septum qiyshayishi) burun nafas olishini qiyinlashtirib, surunkali rinit va sinusitlarga zamin yaratadi.</div>
+        </div>
+
+        <!-- #OST-13 -->
+        <div class="card" data-search="ost-13 os palatinum tanglay palatine palatine bone nebnaya kost damak kemiği">
+            <div class="card-header"><span>Os palatinum</span><span class="badge">#OST-13</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Tanglay suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Palatine bone (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Небная кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Damak kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Lamina horizontalis (Gorizontal plastinka)</li>
+                <li>Lamina perpendicularis (Tik plastinka)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Canalis palatinus major ➔ Nn. palatini majores va minores</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Qattiq tanglayning tug'ma nuqsonlari (tovuq lab / bo'ri tanglay) shu suyakning o'sish nuqsonlari bilan bog'liq bo'ladi.</div>
+        </div>
+
+        <!-- #OST-14 -->
+        <div class="card" data-search="ost-14 concha nasalis inferior pastki burun chig'anog'i inferior nasal concha nizhnyaya nosovaya rakovina alt burun istiridyesi">
+            <div class="card-header"><span>Concha nasalis inferior</span><span class="badge">#OST-14</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Pastki burun chig'anog'i (juft)</div>
+                <div>🇬🇧 <b>English:</b> Inferior nasal concha (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Нижняя носовая раковина (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Alt burun istiridyesi (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul><li>Burun bo'shlig'ining yon devorida joylashgan alohida burmalar shaklidagi suyak.</li></ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Maxsus teshikka ega emas, shilliq qavat ostidan havo oqimini isitish va namlash vazifasini bajaradi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Allergik reaksiyalar va yallig'lanishlarda bu chig'anoq shilliq qavati shishib, burun yo'llarini to'liq berkitib qo'yishi mumkin.</div>
+        </div>
+
+        <!-- #OST-15 -->
+        <div class="card" data-search="ost-15 os hyoideum til osti hyoid hyoid bone podyazychnaya kost dil kemiği">
+            <div class="card-header"><span>Os hyoideum</span><span class="badge">#OST-15</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Til osti suyagi (toq)</div>
+                <div>🇬🇧 <b>English:</b> Hyoid bone (Unpaired)</div>
+                <div>🇷🇺 <b>Русский:</b> Подъязычная кость (Непарный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Dil kemiği (Tek)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Corpus (Tana)</li>
+                <li>Cornua majora (Katta shoxlar)</li>
+                <li>Cornua minora (Kichik shoxlar)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Suyak teshiklarga ega emas. Skeletda boshqa suyaklar bilan bevosita bo'g'im orqali birikmaydigan yagona suyak (muskullar va boylamlar orqali osilib turadi).</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Sud-tibbiy amaliyotida bo'g'ish orqali qotillik holatlarida til osti suyagining sinishi eng muhim diagnostik belgilaridan biridir.</div>
+        </div>
+
+        <!-- #OST-16 -->
+        <div class="card" data-search="ost-16 malleus bolg'acha malleus hammer molotochek çekiç kemiği">
+            <div class="card-header"><span>Malleus</span><span class="badge">#OST-16</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Bolg'acha (juft)</div>
+                <div>🇬🇧 <b>English:</b> Malleus / Hammer (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Молоточек (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Çekiç kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Caput (Boshchasi)</li>
+                <li>Manubrium (Dastasi)</li>
+                <li>Processus lateralis et anterior</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>O'rta quloq bo'shlig'ida joylashgan eshitish suyakchasi; teshiklari yo'q.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Otoskleroz yoki o'rta quloq yallig'lanishlarida (otit) bolg'achaning harakatchanligi buzilib, o'tkazuvchanlik turi bo'karoq karlikka sabab bo'ladi.</div>
+        </div>
+
+        <!-- #OST-17 -->
+        <div class="card" data-search="ost-17 incus sandon incus anvil nakovalnya örs kemiği">
+            <div class="card-header"><span>Incus</span><span class="badge">#OST-17</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Sandon (juft)</div>
+                <div>🇬🇧 <b>English:</b> Incus / Anvil (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Наковальня (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Örs kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Corpus (Tana)</li>
+                <li>Crus longum (Uzun oyoq)</li>
+                <li>Crus breve (Qisqa oyoq)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Bolg'acha va uzangi orasida ko'prik vazifasini bajaruvchi o'rta quloq suyagi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Travmalar yoki yiringli jarayonlar natijasida sandon va uzangi orasidagi bo'g'im yemirilishi tovush tebranishining ichki quloqqa uzatilishini to'xtatadi.</div>
+        </div>
+
+        <!-- #OST-18 -->
+        <div class="card" data-search="ost-18 stapes uzangi stapes stirrup stremya üzengi kemiği">
+            <div class="card-header"><span>Stapes</span><span class="badge">#OST-18</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Uzangi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Stapes / Stirrup (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Стремя (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Üzengi kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Caput stapedis (Boshchasi)</li>
+                <li>Crus anterius va posterius</li>
+                <li>Basis stapedis (Asosi / tovoni)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Oyoqchalari orasida kichik teshikcha bo'ladi. Asosi ichki quloqning oval oynachasiga yopishadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Otoskleroz kasalligida uzangi asosi qotib qoladi (ankiloz), natijada tovush tebranishi ichki quloqqa o'tmay, eshitish qobiliyati yo'qoladi.</div>
+        </div>
+
+        <!-- #OST-19 -->
+        <div class="card" data-search="ost-19 vertebrae cervicales bo'yin umurtqalari cervical vertebrae shejnie pozvonki boyun omurlari">
+            <div class="card-header"><span>Vertebrae cervicales</span><span class="badge">#OST-19</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Bo'yin umurtqalari (C1–C7)</div>
+                <div>🇬🇧 <b>English:</b> Cervical vertebrae</div>
+                <div>🇷🇺 <b>Русский:</b> Шейные позвонки</div>
+                <div>🇹🇷 <b>Türkçe:</b> Boyun omurları</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Corpus, arcus, foramen vertebrale</li>
+                <li>Processus spinosus, transversus (teshigi bor: foramen processus transversi)</li>
+                <li>Maxsus umurtqalar: C1 – Atlas, C2 – Axis (Dens)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul>
+                <li>Foramen processus transversi ➔ A. et v. vertebralis</li>
+                <li>Foramen vertebrale kanali ➔ Orqa miya (Medulla spinalis) va uning qobig'i</li>
+            </ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> C1 va C2 (Atlas-Axis) bo'g'imining shikastlanishi yoki tishsimon o'simtaning (Dens) sinishi o'tkir nafas markazi falajiga yoki o'limga olib kelishi mumkin.</div>
+        </div>
+
+        <!-- #OST-20 -->
+        <div class="card" data-search="ost-20 vertebrae thoracicae ko'krak umurtqalari thoracic vertebrae grudnie pozvonki sırt omurları">
+            <div class="card-header"><span>Vertebrae thoracicae</span><span class="badge">#OST-20</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Ko'krak umurtqalari (Th1–Th12)</div>
+                <div>🇬🇧 <b>English:</b> Thoracic vertebrae</div>
+                <div>🇷🇺 <b>Русский:</b> Грудные позвонки</div>
+                <div>🇹🇷 <b>Türkçe:</b> Sırt omurları</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Fovea costalis superior et inferior (Qovurg'a chuqurchalari)</li>
+                <li>Fovea costalis processus transversi (Ko'ndalang o'simta chuqurchasi)</li>
+                <li>Uzun, pastga egilgan processus spinosus (qiltiriq o'simtalar)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul>
+                <li>Foramen vertebrale ➔ Orqa miya va uning ildizchalari</li>
+                <li>Intervertebral teshiklar ➔ Nn. spinales (Orqa miya nervlari)</li>
+            </ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Ko'krak umurtqalarining osteoporoz yoki travmatik komression sinishlari belbog'simon qovurg'alararo og'riqlarga va kifoz (bukri) deformatsiyasiga sabab bo'ladi.</div>
+        </div>
+
+        <!-- #OST-21 -->
+        <div class="card" data-search="ost-21 vertebrae lumbales bel umurtqalari lumbar vertebrae poyasnichnie pozvonki bel omurlari">
+            <div class="card-header"><span>Vertebrae lumbales</span><span class="badge">#OST-21</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Bel umurtqalari (L1–L5)</div>
+                <div>🇬🇧 <b>English:</b> Lumbar vertebrae</div>
+                <div>🇷🇺 <b>Русский:</b> Поясничные позвонки</div>
+                <div>🇹🇷 <b>Türkçe:</b> Bel omurları</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Katta tana (Corpus vertebrae)</li>
+                <li>Qisqa va keng processus spinosus</li>
+                <li>Processus accessorius va mamillaris</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Intervertebral teshiklar ➔ N. ischiadicus tarkibiga kiruvchi nerv ildizchalari (L4-S3)</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Og'ir yuk ko'tarish natijasida L4-L5 yoki L5-S1 sohasida disk churrasi (grijasi) hosil bo'lib, o'tirgich nervi (isxiadikus) siqilishi va oyoqqa o'tkir og'riq berishi kuzatiladi.</div>
+        </div>
+
+        <!-- #OST-22 -->
+        <div class="card" data-search="ost-22 os sacrum dumg'aza sacrum krestes sağrı kemiği">
+            <div class="card-header"><span>Os sacrum</span><span class="badge">#OST-22</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Dumg'aza suyagi (5 ta umurtqa qo'shilishidan)</div>
+                <div>🇬🇧 <b>English:</b> Sacrum (Unpaired)</div>
+                <div>🇷🇺 <b>Русский:</b> Крестец (Непарный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Sağrı kemiği (Tek)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Basis ossis sacri (Asosi), Apex (Cho'qqisi)</li>
+                <li>Facies pelvina va dorsalis</li>
+                <li>Lineae transversae, crista sacralis mediana</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Foramina sacralia anteriora et posteriora ➔ Qon tomirlari va dumg'aza nervlari shoxlari (rami anteriores et posteriores)</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Tug'ruq jarayonida dumg'aza suyagining nutatsion harakati kichik chanoq hajmini o'zgartirishda muhim ahamiyatga ega. Travmalarda sakral plexus zararlanishi mumkin.</div>
+        </div>
+
+        <!-- #OST-23 -->
+        <div class="card" data-search="ost-23 os coccygis dum suyagi coccyx kopchik kuyruk sokumu">
+            <div class="card-header"><span>Os coccygis</span><span class="badge">#OST-23</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Dum suyagi (4–5 ta rudiment umurtqa)</div>
+                <div>🇬🇧 <b>English:</b> Coccyx (Unpaired)</div>
+                <div>🇷🇺 <b>Русский:</b> Копчик (Непарный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kuyruk sokumu (Tek)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Cornua coccygea (Dum suyagi shoxchalari)</li>
+                <li>Kichik uchburchak shaklidagi rudimentar suyak.</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Maxsus yirik teshiklari yo'q, dumg'aza nervlarining oxirgi tolalari tarqaladi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Dum suyagiga yiqilish natijasida kelib chiqadigan jarohatlar kuchli og'riq (koksigodiniya) keltirib chiqaradi va o'tirishni qiyinlashtiradi.</div>
+        </div>
+
+        <!-- #OST-24 -->
+        <div class="card" data-search="ost-24 sternum to'sh sternum grudina göğüs kemiği">
+            <div class="card-header"><span>Sternum</span><span class="badge">#OST-24</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> To'sh suyagi (toq)</div>
+                <div>🇬🇧 <b>English:</b> Sternum (Unpaired)</div>
+                <div>🇷🇺 <b>Русский:</b> Грудина (Непарный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Göğüs kemiği (Tek)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Manubrium sterni (To'sh dastasi)</li>
+                <li>Corpus sterni (To'sh tanasi)</li>
+                <li>Processus xiphoideus (Xanjarismon o'simta)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Suyak teshiklarga ega emas. Orqa yuzasida ko'ks oralig'i organlari va yirik tomirlar joylashadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Yurak to'xtaganda reanimatsiya qilish (yopiq yurak massaji) paytida to'sh suyagining pastki qismiga bosim beriladi. Ba'zan qovurg'alar bilan birga sinishi mumkin.</div>
+        </div>
+
+        <!-- #OST-25 -->
+        <div class="card" data-search="ost-25 costae qovurg'alar ribs rebra kaburgalar">
+            <div class="card-header"><span>Costae</span><span class="badge">#OST-25</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Qovurg'alar (juft, I–XII)</div>
+                <div>🇬🇧 <b>English:</b> Ribs (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Ребра (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kaburgalar (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Caput costae (Boshchasi), Collum (Bo'yni), Tuberculum (Do'ngchasi)</li>
+                <li>Corpus costae (Sulcus costae — qovurg'a egatigacha)</li>
+                <li>Chin qovurg'alar (1-7), soxta qovurg'alar (8-10), suzuvchi qovurg'alar (11-12)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Sulcus costae ostidan o'tadi ➔ N. intercostalis va V. et A. intercostales</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Qovurg'alar sinishida o'tkir qovurg'a uchi pleura yoki o'pkani shikastlab, pnevmotoraks (pleura bo'shlig'iga havo yig'ilishi) keltirib chiqarishi mumkin.</div>
+        </div>
+
+        <!-- #OST-26 -->
+        <div class="card" data-search="ost-26 clavicula o'mrov clavicle klyuchica köprücük kemiği">
+            <div class="card-header"><span>Clavicula</span><span class="badge">#OST-26</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> O'mrov suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Clavicle (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Ключица (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Köprücük kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Extremitas sternalis (To'sh uchi)</li>
+                <li>Corpus claviculae (Tana)</li>
+                <li>Extremitas acromialis (Akromial uch)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Maxsus teshigi yo'q. Ostidan plexus brachialis'ning yirik tomir-nerv tutami o'tadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Qo'lga tushib ketganda yoki yelka qismiga qattiq zarba tekkanida o'mrov suyagi eng ko'p sinadigan suyaklardan biridir (ko'pincha o'rta uchdan bir qismida).</div>
+        </div>
+
+        <!-- #OST-27 -->
+        <div class="card" data-search="ost-27 scapula kurak scapula lopatka kürek kemiği">
+            <div class="card-header"><span>Scapula</span><span class="badge">#OST-27</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Kurak suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Scapula (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Лопатка (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kürek kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Facies costalis va dorsalis (Spina scapulae)</li>
+                <li>Processus coracoideus (Qarg'asimon o'simta)</li>
+                <li>Cavitas glenoidalis (Yelka bo'g'im yuzasi) va Acromion</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Incisura scapulae ustidagi yopiq teshikchadan ➔ N. suprascapularis o'tadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Kurak suyagi kuchli tashqi travmalar natijasida sinishi mumkin. Uning harakatining buzilishi yelka kamarining funksiyasini cheklaydi.</div>
+        </div>
+
+        <!-- #OST-28 -->
+        <div class="card" data-search="ost-28 humerus yelka humerus plechevaya kost kol kemiği">
+            <div class="card-header"><span>Humerus</span><span class="badge">#OST-28</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Yelka suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Humerus (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Плечевая кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kol kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Caput humeri (Boshchasi), Collum anatomicum va chirurgicum</li>
+                <li>Corpus humeri (Sulcus nervi radialis)</li>
+                <li>Condylus humeri (Trochlea va capitulum)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul>
+                <li>Sulcus n. radialis o'tish sohasi ➔ N. radialis (Radial nerv)</li>
+                <li>Fossa olecrani va fossa coronoidea</li>
+            </ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Yelka suyagi jarrohlik bo'yni (collum chirurgicum) sinishida N. axillaris shikastlanib, yelkani ko'tarish va yelka terisi sezgisi buziladi.</div>
+        </div>
+
+        <!-- #OST-29 -->
+        <div class="card" data-search="ost-29 radius bilak radius luchevaya kost döner kemik">
+            <div class="card-header"><span>Radius</span><span class="badge">#OST-29</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Bilak suyagi (tashqi) (juft)</div>
+                <div>🇬🇧 <b>English:</b> Radius (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Лучевая кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Döner kemik (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Caput radii (Boshchasi), Circumferentia articularis</li>
+                <li>Tuberositas radii (Do'ngchasi)</li>
+                <li>Processus styloideus radii (Shoxsimon o'simta)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Suyak tanasida yirik teshik yo'q, distal qismida bilak arteriyasi va nerv shoxchalari o'tadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Ochiq qo'lga yiqilganda radiusning pastki uchi tipik joyda sinishi (Colles sinishi) eng ko'p uchraydigan travmatologik patologiyadir.</div>
+        </div>
+
+        <!-- #OST-30 -->
+        <div class="card" data-search="ost-30 ulna tirsak ulna loktevaya kost dirsek kemiği">
+            <div class="card-header"><span>Ulna</span><span class="badge">#OST-30</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Tirsak suyagi (medial) (juft)</div>
+                <div>🇬🇧 <b>English:</b> Ulna (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Локтевая кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Dirsek kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Olecranon (Tirsak o'simtasi) va Processus coronoideus</li>
+                <li>Incisura trochlearis</li>
+                <li>Caput ulnae va Processus styloideus ulnae</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Foramen nutricium (oziqlantiruvchi teshik). Pastki qismida N. ulnaris yaqin joylashadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Tirsak suyagi olecranon qismining yallig'lanishi yoki zarbalarida qo'lni yozish va bukish funksiyalari keskin og'riq bilan cheklanadi.</div>
+        </div>
+
+        <!-- #OST-31 -->
+        <div class="card" data-search="ost-31 ossa carpi kaft usti carpal carpal bones kosti zapyasstya el bilek kemiği">
+            <div class="card-header"><span>Ossa carpi</span><span class="badge">#OST-31</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Kaft usti suyaklari (8x2 = 16 ta)</div>
+                <div>🇬🇧 <b>English:</b> Carpal bones (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Кости запястья (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> El bilek kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Proksimal qator: Os scaphoideum, lunatum, triquetrum, pisiforme</li>
+                <li>Distal qator: Os trapezoideum, trapezium, capitatum, hamatum</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Canalis carpi (Kaft usti kanali) ➔ N. medianus (O'rta nerv) va barmoq bukuvchi paylar o'tadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Kanalda n. medianusning siqilishi "Kaft usti kanali sindromi" (Carpal tunnel syndrome) — barmoqlarda uvushish va og'riq keltirib chiqaradi.</div>
+        </div>
+
+        <!-- #OST-32 -->
+        <div class="card" data-search="ost-32 ossa metacarpi kaft suyaklari metacarpals pyastnie kosti el tarak kemiği">
+            <div class="card-header"><span>Ossa metacarpi</span><span class="badge">#OST-32</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Kaft suyaklari (I–V, juft)</div>
+                <div>🇬🇧 <b>English:</b> Metacarpals (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Пястные кости (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> El tarak kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Basis (Asosi), Corpus (Tanasi), Caput (Boshchasi)</li>
+                <li>Qisqa naysimon suyaklar turkumiga kiradi.</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Oralig'idagi bo'shliqlardan kaft arteriyalari yoyi va nerv shoxchalari o'tadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Mushtlashganda yoki qattiq jismga urilganda V-kaft suyagining boshchasi sinishi (Bokser sinishi) ko'p kuzatiladi.</div>
+        </div>
+
+        <!-- #OST-33 -->
+        <div class="card" data-search="ost-33 phalanges digitorum barmoq falangalari phalanges falangilari falangi paltsev parmak kemiği">
+            <div class="card-header"><span>Phalanges digitorum manus</span><span class="badge">#OST-33</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Barmoq falangalari (14 tadan 2 ta)</div>
+                <div>🇬🇧 <b>English:</b> Phalanges of fingers (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Фаланги пальцев кисти (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Parmak kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Phalanx proximalis, media, distalis (I-barmoqda media yo'q).</li>
+                <li>Har bir falanga asos, tana va boshchadan iborat.</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Maxsus yirik teshiklari yo'q. Tomir va nervlar yon tomonlaridan o'tadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Ishlab chiqarish va maishiy travmalarda falangalarning ezilishi va sinishi eng ko'p uchraydigan jarrohlik amaliyotlaridan biridir.</div>
+        </div>
+
+        <!-- #OST-34 -->
+        <div class="card" data-search="ost-34 os coxae chanoq hip bone tazovaya kost kalça kemiği">
+            <div class="card-header"><span>Os coxae</span><span class="badge">#OST-34</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Chanoq suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Hip bone / Innominate bone (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Тазовая кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kalça kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Os ilium (Yonbosh suyagi)</li>
+                <li>Os ischii (O'tirgich suyagi)</li>
+                <li>Os pubis (Qov suyagi) — Acetabulum va Foramen obturatorium</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul>
+                <li>Foramen obturatorium ➔ A., v. va n. obturatorius</li>
+                <li>Incisura ischiadica major et minor ➔ N. ischiadicus va qon tomirlari</li>
+            </ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Chanoq suyagi sinishlari ko'pincha yirik qon tomirlarning shikastlanishi va og'ir qon yo'qotish (shok holati) bilan kechuvchi xavfli jarohatlardandir.</div>
+        </div>
+
+        <!-- #OST-35 -->
+        <div class="card" data-search="ost-35 femur son femur thigh bone bedrennaya kost uyluk kemiği">
+            <div class="card-header"><span>Femur</span><span class="badge">#OST-35</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Son suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Femur / Thigh bone (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Бедренная кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Uyluk kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Caput femoris (Boshchasi), Collum femoris</li>
+                <li>Trochanter major va minor (Katta va kichik qo'shimcha do'nglar)</li>
+                <li>Condylus medialis va lateralis</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul>
+                <li>Fovea capitis femoris (boshcha o'sig'i tomiri)</li>
+                <li>Orqa qismida Linea aspera; pastki qismida N. ischiadicus yaqin o'tadi.</li>
+            </ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Keksaygan yoshda son suyagi bo'yni (collum femoris) sinishi eng og'ir patologiya bo'lib, uzoq vaqt yotoq rejimini talab qiladi va tromboemboliya xavfini oshiradi.</div>
+        </div>
+
+        <!-- #OST-36 -->
+        <div class="card" data-search="ost-36 patella tizza patella kneecap nadkolennik diz kapağı">
+            <div class="card-header"><span>Patella</span><span class="badge">#OST-36</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Tizza qopqog'i (juft)</div>
+                <div>🇬🇧 <b>English:</b> Patella / Kneecap (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Надколенник (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Diz kapağı (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Basis patellae (Asosi), Apex patellae (Cho'qqisi)</li>
+                <li>Tana organizmdagi eng yirik sesamoid suyak hisoblanadi.</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Suyak teshiklarga ega emas. M. quadriceps femoris payi ichida rivojlanadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Tizza qopqog'ining to'g'ridan-to'g'ri qattiq jismga urilishidan ko'ndalang yoki parchalanib sinishi tizza bo'g'imini yozish funksiyasini yo'qotadi.</div>
+        </div>
+
+        <!-- #OST-37 -->
+        <div class="card" data-search="ost-37 tibia katta boldir tibia shin bone bolshebertsovaya kost kaval kemiği">
+            <div class="card-header"><span>Tibia</span><span class="badge">#OST-37</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Katta boldir suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Tibia / Shin bone (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Большеберцовая кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kaval kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Condylus medialis va lateralis (Tizza bo'g'imi yuzasi)</li>
+                <li>Tuberositas tibiae (Do'ngchasi)</li>
+                <li>Malleolus medialis (Medial to'piq)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Orqa yuzasida oziqlantiruvchi yirik teshik. N. tibialis orqa qismidan o'tadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Katta boldir suyagi tanasi teriga yaqin joylashgani uchun ochiq sinishlar va osteomielit (suyak yiringlashi) xavfi yuqori bo'lgan suyakdir.</div>
+        </div>
+
+        <!-- #OST-38 -->
+        <div class="card" data-search="ost-38 fibula kichik boldir fibula calf bone malobertsovaya kost kamış kemiği">
+            <div class="card-header"><span>Fibula</span><span class="badge">#OST-38</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Kichik boldir suyagi (juft)</div>
+                <div>🇬🇧 <b>English:</b> Fibula / Calf bone (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Малоберцовая кость (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kamış kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Caput fibulae (Boshchasi)</li>
+                <li>Corpus fibulae (Tanasi)</li>
+                <li>Malleolus lateralis (Yon to'piq)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Collum fibulae sohasi orqali ➔ N. fibularis communis (Umumiy kichik boldir nervi) o'tadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Kichik boldir suyagi boshchasi sohasidagi sinishlar yoki gipsning qattiq siqishi N. fibularis falajiga va "osma oyoq" (oyoq kaftini ko'tara olmaslik) sindromiga olib keladi.</div>
+        </div>
+
+        <!-- #OST-39 -->
+        <div class="card" data-search="ost-39 ossa tarsi oyoq to'piq tarsal tarsal bones kosti predplyusni ayak bilek kemiği">
+            <div class="card-header"><span>Ossa tarsi</span><span class="badge">#OST-39</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Oyoq to'piq / tarsus suyaklari (14 ta)</div>
+                <div>🇬🇧 <b>English:</b> Tarsal bones (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Кости предплюсны (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Ayak bilek kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Talus (Oshiq), Calcaneus (Tovon)</li>
+                <li>Os naviculari, os cuboideum va ossa cuneiformia (I, II, III)</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Canalis tarsi ➔ Tomir va nerv shoxchalari o'tadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Calcaneus (tovon suyagi) balandlikdan sakraganda sinishi mumkin. Talus qon bilan yaxshi ta'minlanmagani uchun sinishlarida aseptik nekroz xavfi yuqori.</div>
+        </div>
+
+        <!-- #OST-40 -->
+        <div class="card" data-search="ost-40 ossa metatarsi oyoq kafti metatarsal metatarsal bones plyusnie kosti ayak tarak kemiği">
+            <div class="card-header"><span>Ossa metatarsi</span><span class="badge">#OST-40</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Oyoq kafti suyaklari (I–V, juft)</div>
+                <div>🇬🇧 <b>English:</b> Metatarsal bones (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Плюсневые кости (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Ayak tarak kemiği (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul>
+                <li>Basis (Asosi), Corpus (Tanasi), Caput (Boshchasi)</li>
+                <li>Uzun naysimon suyaklar tuzilishiga ega kichik suyaklar.</li>
+            </ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Oyoq tagi va usti arteriyalari hamda tarmoq nervlari o'tish bo'shliqlari mavjud.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Uzoq yurish yoki harbiy yurishlarda II va III oyoq kafti suyaklarining charchoq sinishlari (March fracture) kuzatiladi.</div>
+        </div>
+
+        <!-- #OST-41 -->
+        <div class="card" data-search="ost-41 phalanges digitorum pedis oyoq barmoq falangalari phalanges of toes falangi paltsev stopi parmak kemikleri">
+            <div class="card-header"><span>Phalanges digitorum pedis</span><span class="badge">#OST-41</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Oyoq barmoq falangalari (14 tadan 2 ta)</div>
+                <div>🇬🇧 <b>English:</b> Phalanges of toes (Paired)</div>
+                <div>🇷🇺 <b>Русский:</b> Фаланги пальцев стопы (Парный)</div>
+                <div>🇹🇷 <b>Türkçe:</b> Parmak kemikleri (Çift)</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Qismlari:</div>
+            <ul><li>Phalanx proximalis, media, distalis (Bosh barmoqda faqat 2 ta falanga bor).</li></ul>
+            <div class="section-title">⭕️ Teshiklari va Nervlar:</div>
+            <ul><li>Maxsus teshiklari yo'q, barmoq nerv-tomir tutamlari yon tomonlardan keladi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> I-oyoq barmog'ining tashqi tomonga qiyshayishi (Hallux valgus) deformatsiyasida falangalar va kaft suyagi orasidagi burchak o'zgarib, kuchli og'riq beradi.</div>
+        </div>
+
+        <!-- #OST-42 -->
+        <div class="card" data-search="ost-42 costae verae chin qovurg'alar true ribs istinnye rebra gerçek kaburgalar">
+            <div class="card-header"><span>Costae verae</span><span class="badge">#OST-42</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Chin qovurg'alar (I–VII)</div>
+                <div>🇬🇧 <b>English:</b> True ribs</div>
+                <div>🇷🇺 <b>Русский:</b> Истинные ребра</div>
+                <div>🇹🇷 <b>Türkçe:</b> Gerçek kaburgalar</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Orqa qismi umurtqa pog'onasiga, oldingi qismi esa to'g'ridan-to'g'ri to'sh suyagiga (sternum) birikadi.</li>
+                <li>Jami 7 juft bo'lib, ko'krak qafasining mustahkamligini ta'minlaydi.</li>
+            </ul>
+            <div class="section-title">⭕️ Bog'lanishlari va Nerv-tomirlari:</div>
+            <ul><li>Qovurg'a tog'aylari orqali to'sh suyagiga qo'shiladi. Ostidan qovurg'a oralig'i nerv-tomir tutami o'tadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Chin qovurg'alar ko'krak qafasidagi muhim hayotiy a'zolarni (yurak va o'pka) tashqi ta'sirlardan ishonchli himoya qiladi.</div>
+        </div>
+
+        <!-- #OST-43 -->
+        <div class="card" data-search="ost-43 costae spuriae soxta qovurg'alar false ribs lojnie rebra yalancı kaburgalar">
+            <div class="card-header"><span>Costae spuriae</span><span class="badge">#OST-43</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Soxta qovurg'alar (VIII–X)</div>
+                <div>🇬🇧 <b>English:</b> False ribs</div>
+                <div>🇷🇺 <b>Русский:</b> Ложные ребра</div>
+                <div>🇹🇷 <b>Türkçe:</b> Yalancı kaburgalar</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>VIII, IX va X qovurg'alar kiradi.</li>
+                <li>Ular bevosita to'sh suyagiga birikmaydi, balki o'zidan yuqoridagi qovurg'aning tog'ayiga qo'shilib boradi (arcus costalis).</li>
+            </ul>
+            <div class="section-title">⭕️ Bog'lanishlari:</div>
+            <ul><li>Tog'aylararo birikmalar orqali yagona tog'ay yoyiga birlashadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Soxta qovurg'alarning elastikligi nafas olish jarayonida ko'krak qafasining kengayishi va torayishiga moslashish imkonini beradi.</div>
+        </div>
+
+        <!-- #OST-44 -->
+        <div class="card" data-search="ost-44 costae fluctuantes suzuvchi qovurg'alar floating ribs koleblyushiesya rebra yüzen kaburgalar">
+            <div class="card-header"><span>Costae fluctuantes</span><span class="badge">#OST-44</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Suzuvchi / chalg'uvchi qovurg'alar (XI–XII)</div>
+                <div>🇬🇧 <b>English:</b> Floating ribs</div>
+                <div>🇷🇺 <b>Русский:</b> Колеблющиеся ребра</div>
+                <div>🇹🇷 <b>Türkçe:</b> Yüzen kaburgalar</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>XI va XII qovurg'alar.</li>
+                <li>Ularning oldingi uchlari erkin bo'lib, hech qanday suyak yoki tog'ayga birikmaydi.</li>
+            </ul>
+            <div class="section-title">⭕️ Joylashuvi:</div>
+            <ul><li>Faqat umurtqa pog'onasining ko'krak qismiga orqa tomonidan birikadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Bel sohasidagi jarrohlik amaliyotlarida (masalan, buyrak operatsiyalarida) suzuvchi qovurg'alar anatomik mo'ljal vazifasini bajaradi.</div>
+        </div>
+
+        <!-- #OST-45 -->
+        <div class="card" data-search="ost-45 caput costae qovurg'a boshchasi head of rib golovka rebra kaburga başı">
+            <div class="card-header"><span>Caput costae</span><span class="badge">#OST-45</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Qovurg'a boshchasi</div>
+                <div>🇬🇧 <b>English:</b> Head of rib</div>
+                <div>🇷🇺 <b>Русский:</b> Головка ребра</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kaburga başı</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Qovurg'aning umurtqa bilan tutashadigan orqa qismi.</li>
+                <li>Yuzasida umurtqa tanasi chuqurchasiga mos keluvchi bo'g'im yuzasi mavjud.</li>
+            </ul>
+            <div class="section-title">⭕️ Tuzilma tafsiloti:</div>
+            <ul><li>Boshcha Cresta capitis costae (boshcha qirrasi) yordamida ikkita yuzachaga bo'linadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Qovurg'a-umurtqa bo'g'imining yallig'lanishi nafas olganda ko'krak qafasida mahalliy og'riq keltirib chiqaradi.</div>
+        </div>
+
+        <!-- #OST-46 -->
+        <div class="card" data-search="ost-46 collum costae qovurg'a bo'yni neck of rib sheyka rebra kaburga boynu">
+            <div class="card-header"><span>Collum costae</span><span class="badge">#OST-46</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Qovurg'a bo'yni</div>
+                <div>🇬🇧 <b>English:</b> Neck of rib</div>
+                <div>🇷🇺 <b>Русский:</b> Шейка ребра</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kaburga boynu</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Boshcha va do'ngcha orasidagi tor qism.</li>
+                <li>Ustki qirrasida tizma (crista colli costae) joylashgan.</li>
+            </ul>
+            <div class="section-title">⭕️ Bog'lanishlari:</div>
+            <ul><li>Ligamentlar orqali qo'shni umurtqaning ko'ndalang o'simtasiga mustahkamlanadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Bo'yin qismi travmalarda nisbatan nozik bo'lib, kuchli siqilishlarda sinishi mumkin.</div>
+        </div>
+
+        <!-- #OST-47 -->
+        <div class="card" data-search="ost-47 tuberculum costae qovurg'a do'ngchasi tubercle of rib bugorok rebra kaburga kabartısı">
+            <div class="card-header"><span>Tuberculum costae</span><span class="badge">#OST-47</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Qovurg'a do'ngchasi</div>
+                <div>🇬🇧 <b>English:</b> Tubercle of rib</div>
+                <div>🇷🇺 <b>Русский:</b> Бугорок ребра</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kaburga kabartısı</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Bo'yin va tana chegarasidagi orqa yuzada joylashgan do'ngcha.</li>
+                <li>Unda umurtqaning ko'ndalang o'simtasi bilan bo'g'im hosil qiluvchi yuzacha bor.</li>
+            </ul>
+            <div class="section-title">⭕️ Funksiyasi:</div>
+            <ul><li>Qovurg'aning umurtqa bilan harakatchan birikishini ta'minlaydi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Bu do'ngcha va uning atrofidagi bog'lamlar ko'krak qafasining biomekanik harakatida tayanch nuqta bo'lib xizmat qiladi.</div>
+        </div>
+
+        <!-- #OST-48 -->
+        <div class="card" data-search="ost-48 corpus costae qovurg'a tanasi body shaft of rib telo rebra kaburga gövdesi">
+            <div class="card-header"><span>Corpus costae</span><span class="badge">#OST-48</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Qovurg'a tanasi</div>
+                <div>🇬🇧 <b>English:</b> Body / Shaft of rib</div>
+                <div>🇷🇺 <b>Русский:</b> Тело ребра</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kaburga gövdesi</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Qovurg'aning eng uzun, yassi va egilgan qismi.</li>
+                <li>Ichki yuzasining pastki qismida qovurg'a egati (sulcus costae) o'tadi.</li>
+            </ul>
+            <div class="section-title">⭕️ Nerv-tomirlar:</div>
+            <ul><li>Sulcus costae ichida qovurg'aroq arteriyasi, venasi va nervi joylashadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Plevra punksiyasini bajarayotganda, ignani qovurg'aning pastki qirrasidan emas, yuqori qirrasidan o'tkazish zarur.</div>
+        </div>
+
+        <!-- #OST-49 -->
+        <div class="card" data-search="ost-49 os scaphoideum qayiqsimon scaphoid ladevidnaya kost skafoid kemik">
+            <div class="card-header"><span>Os scaphoideum</span><span class="badge">#OST-49</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Qayiqsimon suyak (kaft usti)</div>
+                <div>🇬🇧 <b>English:</b> Scaphoid bone</div>
+                <div>🇷🇺 <b>Русский:</b> Ладьевидная кость</div>
+                <div>🇹🇷 <b>Türkçe:</b> Skafoid kemik</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Kaft usti proksimal qatorining tashqi qismida joylashgan.</li>
+                <li>Shakli qayiqqa o'xshaydi, do'ngchasi bor.</li>
+            </ul>
+            <div class="section-title">⭕️ Joylashuvi:</div>
+            <ul><li>Radius suyagining pastki uchi bilan bo'g'im hosil qiladi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Qo'lga yiqilganda kaft usti suyaklari orasida eng ko'p sinadigan suyak. Qon ta'minoti o'ziga xos bo'lgani uchun aseptik nekrozga olib kelishi mumkin.</div>
+        </div>
+
+        <!-- #OST-50 -->
+        <div class="card" data-search="ost-50 os lunatum yarimoysimon lunate polulunnaya kost lunat kemik">
+            <div class="card-header"><span>Os lunatum</span><span class="badge">#OST-50</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Yarimoysimon suyak</div>
+                <div>🇬🇧 <b>English:</b> Lunate bone</div>
+                <div>🇷🇺 <b>Русский:</b> Полулунная кость</div>
+                <div>🇹🇷 <b>Türkçe:</b> Lunat kemik</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Kaft usti proksimal qatorining markaziy qismida joylashgan.</li>
+                <li>Yarim oy shakliga ega.</li>
+            </ul>
+            <div class="section-title">⭕️ Bog'lanishlari:</div>
+            <ul><li>Radius va boshqa kaft usti suyaklari bilan tutashadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Bu suyak chiqishi yoki qon aylanishining buzilishi (Kimbax kasalligi) bilak bo'g'imida surunkali og'riq keltirib chiqaradi.</div>
+        </div>
+
+        <!-- #OST-51 -->
+        <div class="card" data-search="ost-51 os triquetrum uchqir suyak triquetrum trehgrannaya kost triquetrum kemik">
+            <div class="card-header"><span>Os triquetrum</span><span class="badge">#OST-51</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Uchqir suyak</div>
+                <div>🇬🇧 <b>English:</b> Triquetral bone</div>
+                <div>🇷🇺 <b>Русский:</b> Трехгранная кость</div>
+                <div>🇹🇷 <b>Türkçe:</b> Triquetrum kemik</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Piramida shaklidagi kaft usti suyagi.</li>
+                <li>Proksimal qatorning medial qismida joylashgan.</li>
+            </ul>
+            <div class="section-title">⭕️ Bog'lanishlari:</div>
+            <ul><li>Noksimon suyak (os pisiforme) bilan oldingi yuzasidan tutashadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> To'g'ridan-to'g'ri kuchli zarbalar yoki bilakning haddan tashqari bukilishida jarohatlanishi mumkin.</div>
+        </div>
+
+        <!-- #OST-52 -->
+        <div class="card" data-search="ost-52 os pisiforme no'xotsimon pisiform gorohovidnaya kost pisiform kemik">
+            <div class="card-header"><span>Os pisiforme</span><span class="badge">#OST-52</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> No'xotsimon suyak</div>
+                <div>🇬🇧 <b>English:</b> Pisiform bone</div>
+                <div>🇷🇺 <b>Русский:</b> Гороховидная кость</div>
+                <div>🇹🇷 <b>Türkçe:</b> Pisiform kemik</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>No'xatdek keladigan kichik sesamoid suyak.</li>
+                <li>Os triquetrum ustida joylashib, flexor carpi ulnaris payida rivojlanadi.</li>
+            </ul>
+            <div class="section-title">⭕️ Funksiyasi:</div>
+            <ul><li>Pay uchun blok vazifasini bajarib, bilak bukuvchi muskullar kuchini oshiradi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Ushbu suyak ostidan o'tuvchi n. ulnaris siqilib qolsa, jimjiloq va ko'rsatkich barmoq atroflarida uvushish kuzatiladi.</div>
+        </div>
+
+        <!-- #OST-53 -->
+        <div class="card" data-search="ost-53 os trapezoideum trapetsiyasimon trapezoid trapesievidnaya kost trapezoid kemik">
+            <div class="card-header"><span>Os trapezoideum</span><span class="badge">#OST-53</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Kichik trapetsiyasimon suyak</div>
+                <div>🇬🇧 <b>English:</b> Trapezoid bone</div>
+                <div>🇷🇺 <b>Русский:</b> Трапециевидная кость</div>
+                <div>🇹🇷 <b>Türkçe:</b> Trapezoid kemik</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Kaft usti distal qatorining ikkinchi suyagi.</li>
+                <li>Kichik to'rtburchak shaklga ega.</li>
+            </ul>
+            <div class="section-title">⭕️ Bog'lanishlari:</div>
+            <ul><li>II-kaft suyagi asosi bilan tutashadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Kaft usti suyaklarining yopiq jarohatlarida boshqa suyaklar bilan birgalikda shikastlanishi mumkin.</div>
+        </div>
+
+        <!-- #OST-54 -->
+        <div class="card" data-search="ost-54 os capitatum boshchali capitate golovchataya kost kapitat kemik">
+            <div class="card-header"><span>Os capitatum</span><span class="badge">#OST-54</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Boshchali suyak</div>
+                <div>🇬🇧 <b>English:</b> Capitate bone</div>
+                <div>🇷🇺 <b>Русский:</b> Головчатая кость</div>
+                <div>🇹🇷 <b>Türkçe:</b> Kapitat kemik</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Kaft usti suyaklarining eng yirigi.</li>
+                <li>O'ziga xos boshchaga ega bo'lib, markazda joylashadi.</li>
+            </ul>
+            <div class="section-title">⭕️ Bog'lanishlari:</div>
+            <ul><li>Atrofidagi deyarli barcha kaft usti va III-kaft suyagi bilan bo'g'im hosil qiladi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Kaft usti me'yoriy arxitekturasi va biomekanik barqarorligini saqlashda markaziy tayanch bo'lib xizmat qiladi.</div>
+        </div>
+
+        <!-- #OST-55 -->
+        <div class="card" data-search="ost-55 os hamatum ilmoqli hamate kryuchkovidnaya kost hamat kemik">
+            <div class="card-header"><span>Os hamatum</span><span class="badge">#OST-55</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Ilmoqli suyak</div>
+                <div>🇬🇧 <b>English:</b> Hamate bone</div>
+                <div>🇷🇺 <b>Русский:</b> Крючковидная кость</div>
+                <div>🇹🇷 <b>Türkçe:</b> Hamat kemik</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Distal qatorning medial qismida joylashgan.</li>
+                <li>Pastki-old yuzasida o'ziga xos ilmoq o'simtasi mavjud.</li>
+            </ul>
+            <div class="section-title">⭕️ Tuzilma tafsiloti:</div>
+            <ul><li>Ilmoq qismi kaft usti kanalining lateral devorini hosil qilishda qatnashadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Tennis raketkasi, golf tayog'i yoki velosiped rulidan foylanganda doimiy bosim tushishi natijasida hamatus ilmog'i sinishi kuzatilishi mumkin.</div>
+        </div>
+
+        <!-- #OST-56 -->
+        <div class="card" data-search="ost-56 talus oshiq talus ankle bone tarannaya kost aşık kemiği">
+            <div class="card-header"><span>Talus</span><span class="badge">#OST-56</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Oshiq suyagi (oyoq to'piq)</div>
+                <div>🇬🇧 <b>English:</b> Talus / Ankle bone</div>
+                <div>🇷🇺 <b>Русский:</b> Таранная кость</div>
+                <div>🇹🇷 <b>Türkçe:</b> Aşık kemiği</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Oyoq to'piq qismining eng yuqori suyagi.</li>
+                <li>Trochlea tali orqali katta va kichik boldir suyaklari bilan bo'g'im hosil qiladi.</li>
+            </ul>
+            <div class="section-title">⭕️ Qon aylanishi:</div>
+            <ul><li>Suyak yuzasining katta qismi bo'g'im tog'aylari bilan qoplanganligi sababli, qon tomirlar kirish sohasi cheklangan.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Talus sinishlari yuqoridan qattiq tushganda sodir bo'ladi va qon ta'minoti buzilishi sababli aseptik nekrozga moyil bo'ladi.</div>
+        </div>
+
+        <!-- #OST-57 -->
+        <div class="card" data-search="ost-57 calcaneus tovon calcaneus heel bone pyatochnaya kost topuk kemiği">
+            <div class="card-header"><span>Calcaneus</span><span class="badge">#OST-57</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Tovon suyagi</div>
+                <div>🇬🇧 <b>English:</b> Calcaneus / Heel bone</div>
+                <div>🇷🇺 <b>Русский:</b> Пяточная кость</div>
+                <div>🇹🇷 <b>Türkçe:</b> Topuk kemiği</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Oyoq tarsus suyaklarining eng yirigi.</li>
+                <li>Orqa qismida tovon do'ngligi mavjud bo'lib, unga Achill payi birikadi.</li>
+            </ul>
+            <div class="section-title">⭕️ Funksiyasi:</div>
+            <ul><li>Tananing butun og'irligini yerga uzatuvchi asosiy tayanch vazifasini bajaradi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Balandlikdan oyoqni to'g'ri tashlab sakraganda tovon suyagi parcha-parcha bo'lib sinishi (komression sinish) kuzatiladi.</div>
+        </div>
+
+        <!-- #OST-58 -->
+        <div class="card" data-search="ost-58 ossa sesamoidea manus qo'l kaft sesamoid hand sesamoid bones sesamovidnie kosti kisti el sesamoid kemikleri">
+            <div class="card-header"><span>Ossa sesamoidea manus</span><span class="badge">#OST-58</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Qo'l kaft sesamoid suyaklari</div>
+                <div>🇬🇧 <b>English:</b> Hand sesamoid bones</div>
+                <div>🇷🇺 <b>Русский:</b> Сесамовидные кости кисти</div>
+                <div>🇹🇷 <b>Türkçe:</b> El sesamoid kemikleri</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>Muskul paylari orasida joylashgan kichik qo'shimcha suyakchalar.</li>
+                <li>Asosan I-barmoq kaft-falanga bo'g'imi sohasida doimiy uchraydi.</li>
+            </ul>
+            <div class="section-title">⭕️ Funksiyasi:</div>
+            <ul><li>Paylarning harakat traektoriyasini o'zgartirib, ularning mexanik kuchini oshiradi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Rentgenogrammalarda ularning sinishi bilan oddiy qo'shimcha suyakchalarni farqlash muhim ahamiyatga ega.</div>
+        </div>
+
+        <!-- #OST-59 -->
+        <div class="card" data-search="ost-59 ossa sesamoidea pedis oyoq kaft sesamoid foot sesamoid bones sesamovidnie kosti stopi ayak sesamoid kemikleri">
+            <div class="card-header"><span>Ossa sesamoidea pedis</span><span class="badge">#OST-59</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Oyoq kaft sesamoid suyaklari</div>
+                <div>🇬🇧 <b>English:</b> Foot sesamoid bones</div>
+                <div>🇷🇺 <b>Русский:</b> Сесамовидные кости стопы</div>
+                <div>🇹🇷 <b>Türkçe:</b> Ayak sesamoid kemikleri</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul><li>I-oyoq barmog'ining kaft-falanga bo'g'imi tagida ikkita doimiy medial va lateral sesamoid suyaklar joylashadi.</li></ul>
+            <div class="section-title">⭕️ Funksiyasi:</div>
+            <ul><li>Yurish va yugurish vaqtida I-barmoqqa tushadigan og'irlikni tekis taqsimlaydi va amortizatsiya qiladi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Ushbu sohada yuklamaning keskin ortishi sesamoidit (yallig'lanish) yoki stress sinishlariga olib kelishi mumkin.</div>
+        </div>
+
+        <!-- #OST-60 -->
+        <div class="card" data-search="ost-60 fabella fabella fabella fabella fabella">
+            <div class="card-header"><span>Fabella</span><span class="badge">#OST-60</span></div>
+            <div class="lang-grid">
+                <div>🇺🇿 <b>O'zbek:</b> Fabella (tizza sohasi kichik sesamoid suyagi)</div>
+                <div>🇬🇧 <b>English:</b> Fabella</div>
+                <div>🇷🇺 <b>Русский:</b> Фабелла</div>
+                <div>🇹🇷 <b>Türkçe:</b> Fabella</div>
+            </div>
+            <div class="section-title">📌 Tuzilishi va Xususiyatlari:</div>
+            <ul>
+                <li>M. gastrocnemius tashqi boshining payi ichida uchraydigan o'zgaruvchan kichik sesamoid suyak.</li>
+                <li>Hammada ham bo'lmaydi (anatomik variant).</li>
+            </ul>
+            <div class="section-title">⭕️ Joylashuvi:</div>
+            <ul><li>Tizza bo'g'imining orqa-tashqi qismida joylashadi.</li></ul>
+            <div class="clinical">💡 <b>Klinik ahamiyati:</b> Ba'zan rentgenda ko'rilib, tizza bo'g'imining erkin tana yoki patologik yot tana deb adashtirilishi mumkin.</div>
+        </div>
+    </div>
+
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+
+        function filterCards() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                let text = cards[i].getAttribute('data-search').toLowerCase();
+                if (text.includes(input)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
