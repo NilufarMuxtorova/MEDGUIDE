@@ -74,7 +74,7 @@
 
     <!-- OST-1 -->
     <div class="card">
-        <img src="OST-1.png" alt="Os frontale">
+        <img src="%23OST-1.png" alt="Os frontale">
         <h2>#OST-1: Os frontale (Peshona suyagi)</h2>
         <p><strong>🌐 Terminologiya (5 tilda):</strong></p>
         <ul>
@@ -94,7 +94,7 @@
 
     <!-- OST-14 -->
     <div class="card">
-        <img src="OST-14.png" alt="Concha nasalis inferior">
+        <img src="%23OST-14.png" alt="Concha nasalis inferior">
         <h2>#OST-14: Concha nasalis inferior (Pastki burun chig'anog'i)</h2>
         <p><strong>🌐 Terminologiya (5 tilda):</strong></p>
         <ul>
@@ -109,7 +109,7 @@
         <div class="clinic">
             <strong>💡 Klinik ahamiyati:</strong> Allergik reaksiyalar va yallig'lanishlarda bu chig'anoq shilliq qavati shishib, burun nafas yo'lini to'sib qo'yishi (rinit) kuzatiladi.
         </div>
-        <button class="speak-btn" onclick="speakText('Concha nasalis inferior. Pastki burun chig'anog'i. Burun bo‘shlig‘ining yon devorida joylashgan alohida burmalar shaklidagi suyak.')">🔊 Tinglash</button>
+        <button class="speak-btn" onclick="speakText('Concha nasalis inferior. Pastki burun chiganogi. Burun boshligining yon devorida joylashgan alohida burmalar shaklidagi suyak.')">🔊 Tinglash</button>
     </div>
 
 </div>
@@ -118,12 +118,13 @@
     function speakText(text) {
         if ('speechSynthesis' in window) {
             window.speechSynthesis.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'uz-UZ';
-            utterance.rate = 0.9;
+            const cleanText = text.replace(/[#_*\[\]()]/g, '');
+            const utterance = new SpeechSynthesisUtterance(cleanText);
+            utterance.lang = 'ru-RU'; // Ruscha ovoz mexanizmi orqali lotincha atamalarni mukammal o'qiydi
+            utterance.rate = 0.85;
             window.speechSynthesis.speak(utterance);
         } else {
-            alert("Brauzeringiz ovoz chiqarish funksiyasini qo'llab-quvvatlamaydi.");
+            alert("Brauzeringiz ovoz chiqarishni qo'llab-quvvatlamaydi.");
         }
     }
 </script>
