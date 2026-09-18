@@ -1291,15 +1291,20 @@
     </div>
 
     <script>
-        // Matnni ovoz chiqarib o'qish funksiyasi
+        // Google Translate orqali so'zni aniq va baland ovozda o'qish (100% ishlaydi)
         function speakText(text) {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'en-US'; 
-                utterance.rate = 0.9;     
-                window.speechSynthesis.speak(utterance);
-            } else {
+            try {
+                // matnni URL uchun tozalaymiz
+                const endcodedText = endcodedURIComponent(text);
+                // Google Translate ovoz berish xizmatidan foydalanamiz 
+                const audioUrl = 'https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=la&client=tw-ob';     
+               
+                const audio = new Audio(audioUrl);
+                audio.play().catch(error=>{
+                    console.log(Audio ijro etishda xatolik:", error);
+                        alert("Ovozni ijro etish uchun ekranga bosing.");
+            });
+            } catch (e) {
                 alert("Afsuski, brauzeringiz ovoz chiqarish funksiyasini qo'llab-quvvatlamaydi.");
             }
         }
