@@ -113,7 +113,6 @@
     </div>
 
 </div>
-
 <script>
     function speakText(text) {
         if ('speechSynthesis' in window) {
@@ -121,20 +120,13 @@
             
             const cleanText = text.replace(/[#_*\[\]()]/g, '');
             const utterance = new SpeechSynthesisUtterance(cleanText);
-            utterance.lang = 'ru-RU';
-            utterance.rate = 0.85;
+            
+            // Lotincha atamalar va o'zbekcha matnlar inglizcha motor orqali ancha aniqroq talaffuz qilinadi
+            utterance.lang = 'en-US'; 
+            utterance.rate = 0.8; // Sal sekinroq va aniqroq o'qishi uchun
+            utterance.pitch = 1.0;
 
-            // Android uchun ovozlarni to'g'ri o'qishini ta'minlash
-            let voices = window.speechSynthesis.getVoices();
-            if (voices.length > 0) {
-                window.speechSynthesis.speak(utterance);
-            } else {
-                window.speechSynthesis.onvoiceschanged = function() {
-                    window.speechSynthesis.speak(utterance);
-                };
-                // Agar voqeani o'zi ushlay olmasa, to'g'ridan-to'g'ri ham chaqiramiz
-                window.speechSynthesis.speak(utterance);
-            }
+            window.speechSynthesis.speak(utterance);
         } else {
             alert("Brauzeringiz ovoz chiqarishni qo'llab-quvvatlamaydi.");
         }
