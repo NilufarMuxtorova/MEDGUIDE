@@ -1297,7 +1297,7 @@
                 // matnni URL uchun tozalaymiz
                 const endcodedText = endcodedURIComponent(text);
                 // Google Translate ovoz berish xizmatidan foydalanamiz 
-                const audioUrl = https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=la&client=tw-ob;     
+                const audioUrl = 'https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=la&client=tw-ob';     
                
                 const audio = new Audio(audioUrl);
                 audio.play().catch(error=>{
