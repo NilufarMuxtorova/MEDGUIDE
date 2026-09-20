@@ -1293,18 +1293,14 @@
     <script>
         // Google Translate orqali so'zni aniq va baland ovozda o'qish (100% ishlaydi)
         function speakText(text) {
-            try {
-                // matnni URL uchun tozalaymiz
-                const endcodedText = endcodedURIComponent(text);
-                // Google Translate ovoz berish xizmatidan foydalanamiz 
-                const audioUrl = 'https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=la&client=tw-ob';     
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'it-IT'; 
+                utterance.rate = 0.85;     
                
-                const audio = new Audio(audioUrl);
-                audio.play().catch(error=>{
-                    console.log(Audio ijro etishda xatolik:", error);
-                        alert("Ovozni ijro etish uchun ekranga bosing.");
-            });
-            } catch (e) {
+                window.speechSynthesis.speak(utterance);
+            } else {
                 alert("Afsuski, brauzeringiz ovoz chiqarish funksiyasini qo'llab-quvvatlamaydi.");
             }
         }
