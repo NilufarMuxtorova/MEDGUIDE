@@ -1290,21 +1290,13 @@
 
     </div>
 
-    <script>
-        // Google Translate orqali so'zni aniq va baland ovozda o'qish (100% ishlaydi)
-        function speakText(text) {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'en-US'; 
-                utterance.rate = 0.85;     
-               
-                window.speechSynthesis.speak(utterance);
-            } else {
-                alert("Afsuski, brauzeringiz ovoz chiqarish funksiyasini qo'llab-quvvatlamaydi.");
-            }
-        }
-
+              function speakText(text) {
+    const encodedText = encodeURIComponent(text);
+    const audio = new Audio('https://dict.youdao.com/dictvoice?audio=${encodedText}&type=1');
+    audio.play().catch(error => {
+        alert("Ovozni eshitish uchun tugmani qayta bosing.");
+    });
+ }
         // QR kod orqali kirganda FAQAT O'SHA kartochkani ko'rsatish
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash; // Masalan: #ost-12
