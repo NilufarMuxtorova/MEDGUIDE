@@ -1290,14 +1290,28 @@
 
     </div>
 
-            function speakText(text) {
+            // Sahifa ochilishi bilan ovoz mexanizmini faollashtirib qo'yish
+if ('speechSynthesis' in window) {
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+
+function speakText(text) {
     if ('speechSynthesis' in window) {
-        // Avvalgi ovozni to'xtatamiz
         window.speechSynthesis.cancel();
         
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-US'; // Lotincha atamalar uchun eng yaxshi talaffuz tili
-        utterance.rate = 0.9; // Biroqroq, aniqroq o'qishi uchun tezligi
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        
+        // Ovozlar yuklanganligini tekshirib keyin o'qish
+        const voices = window.speechSynthesis.getVoices();
+        const engVoice = voices.find(v => v.lang.includes('en') || v.lang.includes('en-US'));
+        if (engVoice) {
+            utterance.voice = engVoice;
+        }
         
         window.speechSynthesis.speak(utterance);
     } else {
