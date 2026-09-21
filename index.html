@@ -1290,13 +1290,19 @@
 
     </div>
 
-              function speakText(text) {
+             let currentAudio = null;
+
+function speakText(text) {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
     const encodedText = encodeURIComponent(text);
-    const audio = new Audio('https://dict.youdao.com/dictvoice?audio=${encodedText}&type=1');
-    audio.play().catch(error => {
+    currentAudio = new Audio(`https://dict.youdao.com/dictvoice?audio=${encodedText}&type=1`);
+    currentAudio.play().catch(error => {
         alert("Ovozni eshitish uchun tugmani qayta bosing.");
     });
- }
+}
         // QR kod orqali kirganda FAQAT O'SHA kartochkani ko'rsatish
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash; // Masalan: #ost-12
