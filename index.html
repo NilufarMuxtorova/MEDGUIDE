@@ -1290,18 +1290,19 @@
 
     </div>
 
-            let currentAudio = null;
-
-function speakText(text) {
-    if (currentAudio) {
-        currentAudio.pause();
-        currentAudio.currentTime = 0;
+            function speakText(text) {
+    if ('speechSynthesis' in window) {
+        // Avvalgi ovozni to'xtatamiz
+        window.speechSynthesis.cancel();
+        
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US'; // Lotincha atamalar uchun eng yaxshi talaffuz tili
+        utterance.rate = 0.9; // Biroqroq, aniqroq o'qishi uchun tezligi
+        
+        window.speechSynthesis.speak(utterance);
+    } else {
+        alert("Brauzeringiz ovoz funksiyasini qo'llab-quvvatlamaydi.");
     }
-    const encodedText = encodeURIComponent(text);
-    currentAudio = new Audio(`https://dict.youdao.com/dictvoice?audio=${encodedText}&type=1`);
-    currentAudio.play().catch(error => {
-        alert("Ovozni eshitish uchun tugmani qayta bosing.");
-    });
 }
 
 // Sahifadagi istalgan tinglash tugmasini avtomatik tushunadigan xavfsiz mexanizm
