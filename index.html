@@ -1303,6 +1303,32 @@ function speakText(text) {
         alert("Ovozni eshitish uchun tugmani qayta bosing.");
     });
 }
+
+// Sahifadagi istalgan tinglash tugmasini avtomatik tushunadigan xavfsiz mexanizm
+document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.speak-btn');
+    if (!btn) return;
+    
+    // Tugmaning o'zidan yoki uning yonidagi sarlavhadan atamani olamiz
+    let term = btn.getAttribute('data-term');
+    if (!term) {
+        // Agar data-term bo'lmasa, o'sha kartochkadagi <h3> sarlavhadan oladi
+        const card = btn.closest('.card');
+        if (card) {
+            const h3 = card.querySelector('h3');
+            if (h3) {
+                // Faqatgina inglizcha/lotincha atamani ajratib olamiz (masalan: "#OST-1: Os frontale (Peshona suyagi)" dan "Os frontale" ni)
+                let textFull = h3.innerText;
+                let match = textFull.match(/:\s*([A-Za-z\s]+)\s*\(/);
+                term = match ? match[1].trim() : textFull;
+            }
+        }
+    }
+    
+    if (term) {
+        speakText(term);
+    }
+});
         // QR kod orqali kirganda FAQAT O'SHA kartochkani ko'rsatish
         window.addEventListener('DOMContentLoaded', () => {
             const hash = window.location.hash; // Masalan: #ost-12
