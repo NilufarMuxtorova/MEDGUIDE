@@ -1298,7 +1298,7 @@ function speakText(text) {
         currentAudio.currentTime = 0;
     }
     const encodedText = encodeURIComponent(text);
-    currentAudio = new Audio(`https://dict.youdao.com/dictvoice?audio=${encodedText}&type=1`);
+    currentAudio = new Audio('https://dict.youdao.com/dictvoice?audio=${encodedText}&type=1');
     currentAudio.play().catch(error => {
         alert("Ovozni eshitish uchun tugmani qayta bosing.");
     });
